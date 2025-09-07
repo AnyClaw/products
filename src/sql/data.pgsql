@@ -68,33 +68,33 @@ VALUES ('Chocolate', 10, 200::money);
 
 --#################################################
 
-SELECT * FROM products;
+-- SELECT * FROM products;
 
-SELECT * FROM basket WHERE id_user=?;
+-- SELECT * FROM basket WHERE id_user=?;
 
-INSERT INTO basket
-VALUES (?, ?, ?)
-ON CONFLICT (id_user, id_product)
-DO UPDATE SET amount = ?;
+-- INSERT INTO basket
+-- VALUES (?, ?, ?)
+-- ON CONFLICT (id_user, id_product)
+-- DO UPDATE SET amount = ?;
 
-DELETE FROM basket WHERE id_user = ? AND id_product = ?;
+-- DELETE FROM basket WHERE id_user = ? AND id_product = ?;
 
-DELETE FROM basket WHERE id_user = ?;
+-- DELETE FROM basket WHERE id_user = ?;
 
-UPDATE products SET amount = amount - ? WHERE id = ?;
+-- UPDATE products SET amount = amount - ? WHERE id = ?;
 
-UPDATE users SET balance = ?::money WHERE id = ? RETURNING *;
+-- UPDATE users SET balance = ?::money WHERE id = ? RETURNING *;
 
-SELECT * FROM products 
-WHERE LOWER(name) LIKE CONCAT('%', LOWER(?), '%');
+-- SELECT * FROM products 
+-- WHERE LOWER(name) LIKE CONCAT('%', LOWER(?), '%');
 
-SELECT * FROM products WHERE id=? LIMIT 1;
+-- SELECT * FROM products WHERE id=? LIMIT 1;
 
-INSERT 
-INTO users(login, password, name, phone, role) 
-VALUES (?, ?, ?, ?)
-RETURNING *;
+-- INSERT 
+-- INTO users(login, password, name, phone, role) 
+-- VALUES (?, ?, ?, ?)
+-- RETURNING *;
 
-SELECT * FROM users WHERE login = ? LIMIT 1;
+-- SELECT * FROM users WHERE login = ? LIMIT 1;
 
-UPDATE users SET balance = balance + ?::money WHERE id = ? RETURNING *;
+-- UPDATE users SET balance = balance + ?::money WHERE id = ? RETURNING *;
